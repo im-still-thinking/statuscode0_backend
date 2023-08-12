@@ -8,8 +8,8 @@ uploadData.post(
   "uploadImage",
   async (req, res) => {
     try {
-      response = await upload(req.body?.image, req.body?.metadata);
-      res.status(200).send(response,);
+      const doc = upload(req.body?.image, req.body?.metadata, req.body?.feature_vector, req.body?.hash_code)
+      res.status(200).send(doc);
     } catch (error) {
       console.error(error);
       res.status(500).send({ response: error });

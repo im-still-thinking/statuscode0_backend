@@ -1,55 +1,25 @@
 // Create
 
 const create = async (model, documents) => {
-  await model.create(documents, (err, docs) => {
-    (err, users) => {
-      if (err) {
-        console.error(err);
-        return 0;
-      } else {
-        console.log("Docs created:", docs);
-        return 1;
-      }
-    };
-  });
+  const docs = await model.create(documents);
+  return docs
 };
 
 // Retrieve
 
 const find = async (model, query) => {
-  await model.find(query, (err, docs) => {
-    if (err) {
-      console.error(err);
-      return 0;
-    } else {
-      console.log("Docs found:", docs);
-      return 1;
-    }
-  });
+  const docs = await model.find(query);
+  return docs
 };
 
 const findOne = async (model, query) => {
-  await model.findOne(query, (err, docs) => {
-    if (err) {
-      console.error(err);
-      return 0;
-    } else {
-      console.log("Doc found:", docs);
-      return 1;
-    }
-  });
+  const doc = await model.findOne(query);
+  return doc
 };
 
 const findOneByID = async (model, id) => {
-  await model.findById(id, (err, docs) => {
-    if (err) {
-      console.error(err);
-      return 0;
-    } else {
-      console.log("Doc found:", docs);
-      return 1;
-    }
-  });
+  const doc = await model.findById(id);
+  return doc
 };
 
 const findCount = async (model, query) => {
