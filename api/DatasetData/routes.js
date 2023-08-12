@@ -1,10 +1,10 @@
 const app = require("express");
-const path = require("path");
+const path = 
 
 datasetData = app.Router();
 
 const Dataset = require("../../model/Dataset");
-const crud = require(path.relative(process.cwd(), "util/mongoCRUD"));
+const crud = require("../../util/mongoCRUD");
 
 datasetData.get(
   "/remaining_data",
