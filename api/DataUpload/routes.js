@@ -5,11 +5,11 @@ uploadData = app.Router();
 const upload = require("../../util/uploadData");
 
 uploadData.post(
-  "uploadImage",
+  "/uploadImage",
   async (req, res) => {
     try {
-      const doc = upload(req.body?.image, req.body?.metadata, req.body?.feature_vector, req.body?.hash_code)
-      res.status(200).send(doc);
+      const nftHash = upload(req.body?.image, req.body?.metadata, req.body?.feature_vector, req.body?.hash_code)
+      res.status(200).send(nftHash);
     } catch (error) {
       console.error(error);
       res.status(500).send({ response: error });
