@@ -4,9 +4,6 @@ const lighthouse = require("@lighthouse-web3/sdk")
 
 const { LIGHTHOUSE_API_KEY, LIGHTHOUSE_DOMAIN } = process.env;
 
-const Dataset = require("../model/Dataset");
-const crud = require("./mongoCRUD");
-
 const upload = async (image, metadata, feature_vector, hash_code) => {
   base64.decode(image, { fname: "image", ext: "png" }).then(async (val) => {
     console.log("File written successfully\n");
