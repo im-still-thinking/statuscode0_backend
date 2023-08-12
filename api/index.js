@@ -1,13 +1,13 @@
 require("dotenv").config();
-require("./config/database").connect();
+require("../config/database").connect();
 
 const { API_PORT } = process.env;
 const port = process.env.PORT || API_PORT;
 
 const cors = require("cors")
 
-const uploadData = require("./api/DataUpload/routes");
-const DatasetData = require("./api/DatasetData/routes");
+const uploadData = require("./DataUpload/routes");
+const DatasetData = require("./DatasetData/routes");
 
 const express = require("express");
 
