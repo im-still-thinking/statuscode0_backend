@@ -3,7 +3,7 @@ const app = require("express");
 datasetData = app.Router();
 
 const Dataset = require("../../model/Dataset");
-const crud = require("../../util/mongoCRUD");
+const crud = require("../../../util/mongoCRUD");
 
 datasetData.get(
   "/remaining_data",
