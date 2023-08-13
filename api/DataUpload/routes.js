@@ -8,8 +8,9 @@ uploadData.post(
   "/uploadImage",
   async (req, res) => {
     try {
-      const nftHash = upload(req.body?.image, req.body?.metadata, req.body?.feature_vector, req.body?.hash_code)
-      res.status(200).send(nftHash);
+      const nft = await upload(req.body?.image, req.body?.metadata, req.body?.feature_vector, req.body?.hash_code)
+      console.log("NFT", nft)
+      res.status(200).send(nft);
     } catch (error) {
       console.error(error);
       res.status(500).send({ response: error });
