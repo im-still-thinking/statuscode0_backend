@@ -14,15 +14,15 @@ const upload = async (image, metadata, feature_vector, hash_code) => {
   console.log(hash_code);
 
   nftData = {
+    name: metadata[1],
+    image: LIGHTHOUSE_DOMAIN + imageResponse.data.Hash,
+    description: metadata[3],
     attributes: [
       {
         trait_type: "Tags",
         value: metadata[5],
       },
     ],
-    description: metadata[3],
-    image: LIGHTHOUSE_DOMAIN + imageResponse.data.Hash,
-    name: metadata[1],
   };
 
   finalData = JSON.stringify(nftData);
@@ -36,6 +36,7 @@ const upload = async (image, metadata, feature_vector, hash_code) => {
     feature_vector: feature_vector,
     hash_code: hash_code,
     metadata: metadata,
+    nftMetadata: finalDataHash.data.Hash,
   };
 };
 
