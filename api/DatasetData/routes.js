@@ -15,7 +15,7 @@ datasetData.get(
       console.log(dataset)
 
     dataset.forEach((i) => {
-        remaining_data.push({"feature_vector": i.feature_vector, "hash_code":i.hash_code});
+        remaining_data.push([i.feature_vector, i.hash_code]);
     })
 
       res.status(200).send(remaining_data);
