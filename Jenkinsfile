@@ -23,5 +23,11 @@ pipeline {
       }
     }
 
+    stage('Push') {
+      steps {
+        sh 'docker push imstillthinking/dataVerseNodeBackend'
+      }
+    }
+
   }
 }
