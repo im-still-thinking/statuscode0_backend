@@ -8,19 +8,8 @@ pipeline {
     }
 
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            sh 'docker build -f Dockerfile .'
-          }
-        }
-
-        stage('whoami') {
-          steps {
-            sh 'id -un'
-          }
-        }
-
+      steps {
+        sh 'docker build -f Dockerfile .'
       }
     }
 
