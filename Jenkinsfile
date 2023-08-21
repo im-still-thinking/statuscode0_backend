@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f Dockerfile .'
+        sh 'docker build -f Dockerfile . -t imstillthinking/dataversenodebackend:latest'
       }
     }
 
@@ -25,7 +25,7 @@ pipeline {
 
     stage('Push') {
       steps {
-        sh 'docker push imstillthinking/dataVerseNodeBackend'
+        sh 'docker push imstillthinking/dataversenodebackend:latest'
       }
     }
 
