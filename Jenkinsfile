@@ -9,7 +9,8 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f Dockerfile . -t imstillthinking/dataversenodebackend:latest'
+        sh '''docker build -f Dockerfile . -t imstillthinking/dataversenodebackend:latest
+docker system prune -a'''
       }
     }
 
